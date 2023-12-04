@@ -8,8 +8,26 @@
 
     .taskListItem {
         border: 1px solid black;
+        color: azure;
+        background-color: #1D1E22;
         border-radius: 10px;
         flex: 1 1;
-        height: 200px; 
+        height: 200px;
+
+        .title-container {
+            font-size: 15px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            h1 {
+                font-family: Lato, sans-serif;
+                font-weight: 900;
+                font-size: 13px;
+                letter-spacing: 1.57px;
+                color: #c5c8d4;
+            }
+        }
     }
 }
