@@ -1,0 +1,15 @@
+.taskList {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1024px;
+    width: 100%;
+    z-index: 1;
+
+    .taskListItem {
+        border: 1px solid black;
+        border-radius: 10px;
+        flex: 1 1;
+        height: 200px; 
+    }
+}

@@ -1,18 +1,21 @@
-
+import useFetch from "../../hooks/useFetch";
+import "./taskList.scss";
 
 const TaskList = () => {
-    let { data, loading, error } = useFetch();
+    let { data, loading, error } = useFetch("http://localhost:8800/api/tasks/");
+
+    console.log("data", data);
 
     return (
-
-        <div className="pList">
+        <div className="taskList">
             {loading ? (
-                <Skeleton />
+                <div />
             ) : (
                 <>
                     {data.map((task, i) => (
-                        <div className="pListItem" key={i}>
-                            <h1>{task[i]?.title}</h1>
+                        <div className="taskListItem" key={i}>
+                            <h1>{task.title}</h1>
+                            <h1>{task.code}</h1>
                         </div>
                     ))}
                 </>
