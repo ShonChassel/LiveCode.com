@@ -14,18 +14,20 @@ const LoginModal = () => {
 
     const handleChange = (e) => {
         const { id, value } = e.target || {};
-
-        if (id === 'username') {
-            setUser((prev) => ({ ...prev, username: value }));
-        } else {
-            setUser((prev) => ({ ...prev, userType: e }));
-            dispatch({ type: "LOGIN_SUCCESS", payload: user });
-        }
-        
-
-        console.log(user);
+        setUser((prev) => ({ ...prev, username: value }));
     };
 
+    const handleClick = (userType) => {
+        setUser((prev) => {
+            const updatedUser = { ...prev, userType: userType };
+            dispatch({ type: "LOGIN_SUCCESS", payload: updatedUser });
+            return updatedUser;
+        });
+    };
+
+    
+    
+    console.log(user);
     return (
         <div className="loginModal">
             <h1>Log In</h1>
@@ -36,8 +38,8 @@ const LoginModal = () => {
                 id="username"
                 value={user.username}
             />
-            <button className="btn" onClick={() => handleChange("Mentor")}>Mentor</button>
-            <button onClick={() => handleChange("Student")}>Student</button>
+            <button className="btn" onClick={() => handleClick("Mentor")}>Mentor</button>
+            <button onClick={() => handleClick("Student")}>Student</button>
         </div>
 
     );

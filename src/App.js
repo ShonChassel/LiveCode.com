@@ -6,12 +6,14 @@ import {
 import Home from "./pages/Home/Home";
 import "./style/app.scss";
 import Task from "./pages/Task/Task";
+import Navbar from "./cmp/navbar/Navbar";
 
 function App() {
 
-  
+
   return (
     <div className="app">
+      <Navbar />
       <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -2,8 +2,7 @@
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    max-width: 1024px;
-    width: 100%;
+    width: 90%;
     z-index: 1;
 
     .taskListItem {
@@ -12,14 +11,25 @@
         background-color: #1D1E22;
         border-radius: 10px;
         flex: 1 1;
-        height: 200px;
 
         .title-container {
             font-size: 15px;
             padding: 5px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 6px;
+            border-bottom: 0.7px solid #8080808a;
+
+            .title {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            img:last-child {
+                height: 10px;
+            }
 
             h1 {
                 font-family: Lato, sans-serif;
@@ -28,6 +38,10 @@
                 letter-spacing: 1.57px;
                 color: #c5c8d4;
             }
+        }
+
+        h1 {
+            font-size: 25px;
         }
     }
 }

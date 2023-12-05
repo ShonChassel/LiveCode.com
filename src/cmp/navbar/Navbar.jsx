@@ -19,7 +19,12 @@ const Navbar = () => {
     console.log('user', user);
     return (
         <div className="navbar">
-            <span className="logo">Online Code</span>
+            <div className="logo">
+            <span>Online
+                <span> C</span>
+                 ode</span>
+
+            </div>
 
             {/* <div className="navItems">
                 <button className="navButton" onClick={Register}>Register</button>
