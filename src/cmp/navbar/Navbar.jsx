@@ -19,20 +19,17 @@ const Navbar = () => {
         navigate(`/`);
     };
 
-    console.log('user', user);
+    const gowHome = () => {
+        navigate(`/`);
+    };
+
+
     return (
         <div className="navbar">
-            <div className="logo">
-            <span>Live
-                <span>C</span>
-                 ode</span>
-
+            <div className="logo" onClick={() => gowHome()}>
+                <span>LiveCode</span>
             </div>
 
-            {/* <div className="navItems">
-                <button className="navButton" onClick={Register}>Register</button>
-                <button className="navButton" onClick={Login}> Login </button>
-            </div> */}
             <div className="navItems">
                 {!user ? (
                     <button className="navLogin" onClick={() => setToggle(!toggle)}>

@@ -16,14 +16,15 @@ import LoginModal from "../../cmp/loginModal/LoginModal";
 const socket = io.connect("https://livecode-server.onrender.com")
 
 socket.on('connect', () => {
-  console.log('Connected to Socket.IO server');
+    console.log('Connected to Socket.IO server');
 });
 
 socket.on('disconnect', () => {
-  console.log('Disconnected from Socket.IO server');
+    console.log('Disconnected from Socket.IO server');
 });
 
 const Task = () => {
+    const [copy, setCopy] = useState(false)
     const location = useLocation();
     const { user, dispatch } = useContext(AuthContext);
     const id = location.pathname.split("/")[2];
@@ -65,13 +66,34 @@ const Task = () => {
         }
     }
 
-    console.log(user);
+
     return (
         <div className="taskDetails">
-            {!user ? <LoginModal /> : 
+            {!user ? <LoginModal /> :
                 <div className="task-container">
                     <div className="task-header">
-                        <h1>{data.title}</h1>
+
+                        <h1>
+                            {user.userType === 'Student' ? (<span><ion-icon name="create-outline"></ion-icon></span>):(<span><ion-icon name="eye-outline"></ion-icon></span>)}
+                            {data.title}
+
+                        </h1>
+                        {copy ? (<button>
+                            <span><ion-icon name="checkmark-sharp"></ion-icon></span>
+                            Copied!
+                        </button>
+
+                        ) : (<button onClick={() => {
+                            navigator.clipboard.writeText(details.code)
+                            setCopy(true)
+                            setTimeout(() => {
+                                setCopy(false)
+                            }, 3000)
+                        }}>
+                            <span><ion-icon name="clipboard-outline"></ion-icon></span>
+                            Copy code
+                        </button>)}
+
                     </div>
 
                     {user.userType === 'Student' ? (

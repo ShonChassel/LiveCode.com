@@ -17,9 +17,39 @@
 
         .task-header {
             border-bottom: 0.7px solid rgba(128, 128, 128, 0.5411764706);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
             h1 {
                 padding-left: 10px;
+                margin: 10px;
+                display: flex;
+                align-items: center;
+                gap: 19px;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    color: gray;
+                }
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+                background-color: rgba(255, 255, 255, 0);
+                color: rgb(208, 204, 204);
+                border: none;
+                gap: 3px;
+                cursor: pointer;
+
+                span {
+                    font-size: 15px;
+
+                }
             }
         }
 
@@ -40,4 +70,3 @@
 
     }
 }
-
