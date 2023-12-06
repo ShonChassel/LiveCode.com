@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const TaskList = () => {
-    let { data, loading, error } = useFetch("http://localhost:8800/api/tasks/");
+    let { data, loading, error } = useFetch("https://livecode-server.onrender.com/api/tasks/");
     const { user, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
 
