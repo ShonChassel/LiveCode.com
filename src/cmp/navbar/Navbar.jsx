@@ -5,7 +5,9 @@ import LoginModal from "../loginModal/LoginModal";
 import { AuthContext } from "../../context/AuthContext";
 
 
+
 const Navbar = () => {
+    const navigate = useNavigate();
     const [toggle, setToggle] = useState(false);
 
     const { user, dispatch } = useContext(AuthContext);
@@ -14,14 +16,15 @@ const Navbar = () => {
     const LogOut = () => {
         dispatch({ type: "LOGOUT" });
         setToggle(false)
+        navigate(`/`);
     };
 
     console.log('user', user);
     return (
         <div className="navbar">
             <div className="logo">
-            <span>Online
-                <span> C</span>
+            <span>Live
+                <span>C</span>
                  ode</span>
 
             </div>

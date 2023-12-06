@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
       <HashRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tasks/:id" element={<Task />} />

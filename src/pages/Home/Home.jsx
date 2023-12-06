@@ -8,9 +8,9 @@ const Home = () => {
 
     return (
         <div className="homeContainer">
-            {/* <Navbar /> */}
             <h1>Choose code block</h1>
             <TaskList />
+            <img className="img-back" src={backImg} alt="" />
             <Footer />
         </div>
 

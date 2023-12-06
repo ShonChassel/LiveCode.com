@@ -4,20 +4,21 @@ import img from "../../style/setings.svg";
 import "./taskList.scss";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const TaskList = () => {
-    let { data, loading, error } = useFetch("http://localhost:8800/api/tasks/");
-    console.log("data", data);
-
+    let { data, loading, error } = useFetch("https://livecode-server.onrender.com/api/tasks/");
+    const { user, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const openTask = (taskId) => {
-        console.log(taskId);
         navigate(`/tasks/${taskId}`);
     };
 
     return (
         <div className="taskList">
+            
             {loading ? (
                 <div />
             ) : (

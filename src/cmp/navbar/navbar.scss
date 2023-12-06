@@ -15,6 +15,7 @@
         color: azure;
         padding-left: 20px;
         font-family: system-ui;
+        cursor: pointer;
     }
 
     .navItems {
@@ -28,71 +29,26 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+
         }
-    }
-}
 
-.user {
-    position: relative;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    padding: 0px 5px 0px 5px;
-}
+        .navLogin {
+            color: azure;
+            background-color: #47CF72;
+            margin: 1px 10px 1px 0px;
+            padding: 10px 16px;
+            font-size: 15px;
+            border: none;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
 
-.user:hover {
-    background-color: rgba(255, 255, 255, 0.164);
-    border-radius: 15px;
-}
+            img {
+                height: 20px;
+            }
+        }
 
-.userImg {
-    height: 35px;
-    border-radius: 70px;
-}
-
-.navContainer {
-    width: 100%;
-    max-width: 1024px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-
-.navButton {
-    margin-left: 20px;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    color: #003580;
-}
-
-.chevron {
-    margin-left: auto;
-    transition: 0.4s;
-    cursor: pointer;
-}
-
-.user.open .chevron {
-    rotate: -180deg;
-}
-
-.navLogin {
-    color: azure;
-    background-color: #47CF72;
-    margin: 1px 10px 1px 0px;
-    padding: 10px 16px;
-    font-size: 15px;
-    border: none;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    img {
-        height: 20px;
     }
 }
