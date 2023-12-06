@@ -13,7 +13,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';
 import LoginModal from "../../cmp/loginModal/LoginModal";
 
-const socket = io.connect("http://localhost:3003")
+const socket = io.connect("https://livecode-server.onrender.com")
 
 const Task = () => {
     const location = useLocation();
