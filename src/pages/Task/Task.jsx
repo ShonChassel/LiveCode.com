@@ -13,8 +13,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';
 import LoginModal from "../../cmp/loginModal/LoginModal";
 
-// const socket = io.connect("https://livecode-server.onrender.com:8800")
-const socket = io('https://livecode-server.onrender.com', { path: '/' }); // Make sure to use the correct URL here
+const socket = io.connect("https://livecode-server.onrender.com")
 
 socket.on('connect', () => {
   console.log('Connected to Socket.IO server');
