@@ -13,7 +13,16 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/default.css';
 import LoginModal from "../../cmp/loginModal/LoginModal";
 
-const socket = io.connect("https://livecode-server.onrender.com:8800")
+// const socket = io.connect("https://livecode-server.onrender.com:8800")
+const socket = io('https://livecode-server.onrender.com', { path: '/' }); // Make sure to use the correct URL here
+
+socket.on('connect', () => {
+  console.log('Connected to Socket.IO server');
+});
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from Socket.IO server');
+});
 
 const Task = () => {
     const location = useLocation();
