@@ -6,6 +6,7 @@
     justify-content: space-between;
     width: 90%;
     z-index: 1;
+    flex-wrap: wrap;
 
     .taskListItem {
         border: 1px solid black;
