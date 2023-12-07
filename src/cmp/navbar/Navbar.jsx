@@ -19,14 +19,14 @@ const Navbar = () => {
         navigate(`/`);
     };
 
-    const gowHome = () => {
+    const goHome = () => {
         navigate(`/`);
     };
 
 
     return (
         <div className="navbar">
-            <div className="logo" onClick={() => gowHome()}>
+            <div className="logo" onClick={() => goHome()}>
                 <span>LiveCode</span>
             </div>
 
@@ -41,6 +41,7 @@ const Navbar = () => {
                         <div>{user.username}</div>
 
                         <button className="navLogin" onClick={LogOut}>
+                        <span><ion-icon name="log-out-outline"></ion-icon></span>
                             Log out
                         </button>
                     </div>
